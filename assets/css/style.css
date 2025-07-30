@@ -2,37 +2,91 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6; /* Melhora a legibilidade do texto */
 }
-ul { list-style: none; padding-left: 5px; }
-a { color:blue; text-decoration: none;}
-.bar {
+ul {
+    list-style: none;
+    padding-left: 5px;
+}
+a {
+    color: #0645ad; /* Cor padrão de links da Wikipedia */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+header { /* Estilo para o novo cabeçalho */
     background-color: #f9f9fb;
-    padding:15px;
+    padding: 15px;
+    border-bottom: solid 1px #cdcdcd;
+    text-align: center; /* Centraliza o logo no cabeçalho */
+}
+.bar { /* Mantido para manter a faixa visual entre header e main, se desejar */
+    background-color: #f9f9fb;
+    padding:5px; /* Reduzi um pouco para não ser tão proeminente */
     border-top: solid 1px #cdcdcd;
     border-bottom: solid 1px #cdcdcd;
 }
-.content {
+main.content { /* Renomeei para main.content para refletir a tag */
     max-width: 1440px;
     margin: auto;
     grid-gap: 3rem;
     display: grid;
     gap: 3rem;
-    grid-template-areas: "sidebar main anchors";
+    grid-template-areas: "sidebar main-article anchors"; /* Área 'main' agora é 'main-article' */
     grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem; /* Apliquei padding em todos os lados */
 }
-.footer {
+.main-article { /* Novo estilo para o artigo principal */
+    padding-right: 15px; /* Adiciona um pequeno padding para melhor leitura */
+}
+footer { /* Estilo para o novo footer */
     min-height: 100px;
     border-top: solid 1px #cdcdcd;
+    background-color: #f9f9fb; /* Cor de fundo para o footer */
+    padding: 20px;
+    text-align: center;
+    color: #555;
 }
-.anchors {
+aside.anchors { /* Renomeei para aside.anchors */
     border-left: solid 1px #cdcdcd;
     padding-left: 15px;
 }
-.sidebar {
+aside.sidebar { /* Renomeei para aside.sidebar */
     border-right: solid 1px #cdcdcd;
+    padding-right: 15px; /* Adicionei padding aqui também */
 }
 figure {
     text-align: center;
+    margin: 20px 0; /* Espaçamento para a figura */
+}
+figure img {
+    max-width: 100%; /* Garante que a imagem não transborde */
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+figcaption {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Estilos para títulos */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 1.8em;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+p {
+    margin-bottom: 1em;
+    text-align: justify; /* Justifica o texto para um visual mais parecido com Wikipedia */
 }
